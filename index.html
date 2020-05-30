@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		.body {
+			background-image: url("main.jpg");
+			background-size: 100%;
+		}
+		.school {
+			display: none;
+		}
+		.q1 {
+			position: absolute;
+			background-image: url("door.png");
+			background-size: 100% 100%;
+			width: 50px;
+			height: 75px;
+			left: 20%;
+			top: 58%;
+		}
+		.q2 {
+			position: absolute;
+			background-image: url("door2.png");
+			background-size: 100% 100%;
+			width: 50px;
+			height: 75px;
+			left: 75%;
+			top: 36%;
+		}
+		.q3 {
+			position: absolute;
+			background-image: url("door2.png");
+			background-size: 100% 100%;
+			width: 50px;
+			height: 75px;
+			left: 75%;
+			top: 80%;
+		}
+		.q4 {
+			position: absolute;
+			background-image: url("duel.png");
+			background-size: 100% 100%;
+			width: 50px;
+			height: 75px;
+			left: 47%;
+			top: 69%;
+		}
+		.q5 {
+			display: block;
+			position: absolute;
+			background-image: url("door2.png");
+			background-size: 100% 100%;
+			width: 50px;
+			height: 75px;
+			left: 75%;
+			top: 46%;
+		}
+		.q6 {
+			display: block;
+			position: absolute;
+			background-image: url(fontan.png);
+			background-size: 100% 100%;
+			width: 100px;
+			height: 100px;
+			left: 45%;
+			top: 20%;
+		}
+		.dialogue {
+			position: absolute;
+			background-image: url("dialogue.jpg");
+			background-size: 100%;
+			height: 200px;
+			top:75%;
+			left: 8%;
+			display: none;
+		}
+		.knopka {
+			position:absolute;
+			left: 40%;
+			top: 92%;
+		}
+		.bg-game {
+			background-image: url("material.png");
+			font-family:arial;
+		}
+		.bg-game:hover{
+			background:black;
+		}
+		.skip {
+			position:absolute;
+			left: 68%;
+			top: 92%;
+		}
+		.ask {
+			background-image: url(window.jpg);
+			background-size: 100% 100%;
+			border: 5px solid black;
+			position: absolute;
+			display: none;
+			width:800px;
+			left:30%;
+			top:20%;
+		}
+		.loc1 {
+			display:none;
+		}
+		.loc2 {
+			display:none;
+		}
+		.loc3 {
+			display:none;
+		}
+		.loc4 {
+			display:none;
+		}
+		.loc5 {
+			display:none;
+		}
+		.loc3_ans {
+			background-image: url(window.jpg);
+			background-size: 100% 100%;
+			border: 5px solid black;
+			position: absolute;
+			width:800px;
+			left:30%;
+			top:20%;
+			display:none;
+		}
+		.absolute {
+			position: absolute;
+		}
+		.timer {
+			top: 5%;
+		}
+		.timer5 {
+			top: 5%;
+		}
+		.slots {
+			background-image: url(window.jpg);
+			background-size: 100% 100%;
+			border: 5px solid black;
+			display: none;
+			position: absolute;
+			width:400px;
+			left:70%;
+			top:60%;
+		}
+		.enemy {
+			display: block;
+			background-image: url(bully.png);
+			background-size: 100% 100%;
+			position: absolute;
+			width:200px;
+			height: 600px;
+			left:40%;
+			top:40%;
+		}
+		.hand {
+			width: 100px;
+			height: 100px;
+			background-image: url(hand.jpg);
+			background-size: 100% 100%;
+		}
+		.weap {
+			width: 100px;
+			height: 100px;
+			background-image: url(pen.jpg);
+			background-size: 100% 100%;
+			margin-left:80px;
+		}
+		.health_enemy {
+			width: 200px;
+			background:green;
+			position: absolute;
+			height: 50px;
+			left:40%;
+			top:30%;
+		}
+		.health_player {
+			width: 200px;
+			background:green;
+			height: 50px;
+		}
+		.size {
+			width:100px;
+			height:100px;
+		}
+		.seif{
+			width:200px;
+			height:300px;
+			background-image:url("seif.jpg");
+			background-size:100% 100%;
+		}
+		.front {
+			display: none;
+		}
+		.teach {
+			display: block;
+			background-image: url(teachers.png);
+			background-size: 100% 100%;
+			position: absolute;
+			width:300px;
+			height: 600px;
+		}
+		.pers {
+			display: none;
+			background-image: url(pers2.png);
+			background-size: 100% 100%;
+			position: absolute;
+			width:300px;
+			height: 450px;
+		}
+		.trees {
+			display:block;
+			background-image: url(trees.png);
+			background-size: 100% 100%;
+		}
+		.logo {
+			display:block;
+			background-image: url(logo.png);
+			background-size: 100% 100%;
+		}
+		.picture {
+			display:block;
+			background-image: url(picture.png);
+			background-size: 100% 100%;
+		}
+		.state {
+			display:block;
+			background-image: url(state.png);
+			background-size: 100% 100%;
+		}
+		.lenta {
+			background-image: url(lenta.png);
+			background-size: 100% 100%;
+		}
+		.key {
+			display:none;
+			background-image: url(key.png);
+			background-size: 100% 100%;
+			width:300px;
+			height:150px;
+		}
+	</style>
+</head>
+<body class="body">
+	<div class="menu col-12">
+		<div class="col-5 mx-auto pb-5" style="margin-top:380px">
+			<div class="col-4 lenta" style="margin-left:38%; height:100px">
+				<h3 class="text-center absolute text-white" style="top:32%;left:8%">Лучший ученик</h3>
+			</div>
+			<button class="btn btn-dark col-2 start bg-game border-0 mt-3" style="margin-left: 47%;">Начать игру</button>
+		</div>
+	</div>
+	<div class="school">
+		<div class="key absolute bg-dark" style="">
+
+		</div>
+		<h2 class="absolute" style="left:12%; top:53%">
+			Класс
+		</h2>
+		<div class="q1 text-secondary text-center">
+			
+		</div>
+		<h2 class="absolute" style="left:80%; top:25%">
+			Cпортзал
+		</h2>
+		<div class="q2 text-secondary text-center">
+			
+		</div>
+		<h2 class="absolute" style="left:78%; top:88%">
+			Учительская
+		</h2>
+		<div class="q3 text-secondary text-center">
+			
+		</div>
+		<h2 class="absolute" style="left:45%; top:75%">
+			Коридор
+		</h2>
+		<div class="q4 text-secondary text-center" >
+			
+		</div>
+		<h2 class="absolute" style="left:78%; top:47%">
+			Директорская
+		</h2>
+		<div class="q5 text-secondary text-center">
+			
+		</div>
+		<h2 class="absolute" style="left:45%; top:32%">
+			Линейка
+		</h2>
+		<div class="q6 text-secondary text-center">
+			
+		</div>
+	</div>
+	<div class="loc1">
+		<div class="ask pb-3 border-dark rounded">
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answer bg-game border-0">Я буду стараться ради общего блага</button>
+			</div>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answer bg-game border-0">Просто так</button>
+			</div>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answer bg-game border-0">Потому что я так хочу</button>
+			</div>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answer bg-game border-0">У меня больной младший брат и ему нужна моя помощь(ложь)</button>
+			</div>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answer bg-game border-0">Хочу ввести свою политику по улучшению качества жизни класса</button>
+			</div>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answer bg-game border-0">Вы с*ки быстро приняли меня в класс, а то убью</button>
+			</div>
+		</div>
+	</div>
+	<div class="loc2">
+		<h1 class="absolute">Очки: <span class = "in-score"></span></h1>
+		<h1 class="timer absolute">Время: <span class = "time"></span>s</h1>
+	</div>
+	<div class="loc3">
+		<div class="teach" style="left:45%; top:25%;">
+			
+		</div>
+		<div class="loc3_ans pb-3 border-dark rounded">
+			<h1 class="book text-center">Математика</h1>
+			<h4 class="zad text-center">Сколько будет 2x = 8</h4>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answers bg-game border-0">Нисколько</button>
+			</div>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answers bg-game border-0">10</button>
+			</div>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answers bg-game border-0">6</button>
+			</div>
+			<div class="col-10 mx-auto">
+				<button class="btn btn-dark col-12 mt-3 answers bg-game border-0">4</button>
+			</div>
+		</div>
+	</div>
+	<div class="loc4">
+		<div class="health_enemy">
+			<h1 style="font-size:25px" class="text-white">HP:<span class="hp_enemy"></span></h1>
+		</div>
+		<div class="enemy">
+
+		</div>
+		<div class="slots pb-3 pt-3">
+			<div style = "display:flex" class="col-9 mx-auto">
+				<div class="hand">
+					
+				</div>
+				<div class="weap">
+					
+				</div>
+			</div>
+			<div class="health_player mt-3 mx-auto">
+				<h1 style="font-size:25px" class="text-white">HP:<span class="hp_player"></span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="loc5">
+		<h1 class="timer5 absolute bg-white">Время: <span class = "times">5</span>s</h1>
+		<div class="bg-warning absolute seif" style = "left:12%; top:60%">
+
+		</div>
+		<div class="text-white picture item absolute size" style = "left:1%; top:12%; width:164px; height: 200px;font-family:arial;font-size:20px">
+
+		</div>
+		<div class="text-white logo item absolute size" style = "left:28%; top:52%; width:120px;font-family:arial;font-size:20px">
+			
+		</div>
+		<div class="text-white item absolute size trees" style = "left:60%; top:35%;font-family:arial;font-size:20px">
+			
+		</div>
+		<div class="text-white state item absolute size" style = "left:80%; top:23%; width:120px; height: 140px;font-family:arial;font-size:20px">
+			
+		</div>
+		<div class="absolute front" style = "left:35%; top:7%; width: 600px; height: 600px;background-image:url(seif1.jpg);
+			background-size:100% 100%;">
+			<h1 class="text-center text-white">Введите 4-х значный код в сейф</h1>
+			<p class="text-center"><input class="mx-auto enter text-center" size="60" maxlength = "4"></input></p>
+			<div class="col-10 mx-auto">
+				<button class="in btn btn-dark col-12 bg-game">Ввести</button>
+			</div>
+			<h1 class="mt-5 text-center control" style="color:white">Код не введён</h1>
+		</div>
+	</div>
+	<div class="loc6">
+		
+	</div>
+	<div class="pers" style = "left:70%; top:30%; transition: 0.5s">
+		
+	</div>
+	<div class="dialogue col-10 mx-auto rounded-pill">
+		<h1 class="txt text-center" style="margin-top:70px"></h1>
+		<button class="btn btn-dark col-3 knopka bg-game border-0">Продолжить</button>
+		<button class="btn btn-dark col-3 skip bg-game border-0">Пропустить всё</button>
+	</div>
+	<script type="">
+		let start = document.querySelector(".start");
+		let menu = document.querySelector(".menu");
+		let school = document.querySelector(".school");
+		let body = document.querySelector(".body");
+		let dialogue = document.querySelector(".dialogue");
+		let knopka = document.querySelector(".knopka");
+		let skip = document.querySelector(".skip");
+		let txt = document.querySelector(".txt");
+		let l = 0;
+		let n = 0;
+		let loc1_ans = 0;
+		let score = 0;
+		let point = 0;
+		let t = 5;
+		let z = 0;
+		let s = 0;
+		let timer = document.querySelector(".timer");
+		let time = document.querySelector(".time");
+
+		let pers = document.querySelector(".pers");
+
+		let q1 = document.querySelector(".q1");
+			let loc1 = document.querySelector(".loc1");
+			let ans = document.querySelectorAll(".answer");
+			let ask = document.querySelector(".ask");
+		let q2 = document.querySelector(".q2");
+			let loc2 = document.querySelector(".loc2");
+			let sc = 0;
+			let in_sc = document.querySelector(".in-score");
+			in_sc.innerHTML = sc;
+			let balls = [];
+		let q3 = document.querySelector(".q3");
+			let loc3 = document.querySelector(".loc3");
+			let loc3_ans = document.querySelector(".loc3_ans");
+			let answers = document.querySelectorAll(".answers");
+			let zad = document.querySelector(".zad");
+			let book = document.querySelector(".book");
+			let otv = 0;
+			let scores = 0;
+		let q4 = document.querySelector(".q4");
+			let randomDmg = function () {
+				let n = Math.random() * 1 + 5;
+				n = Math.round(n);
+				return n;
+			}
+			let randomItem= function () {
+				let n = Math.random() * 2 + 1;
+				n = Math.round(n);
+				return n;
+			}
+			let loc4 = document.querySelector(".loc4");
+			let slots = document.querySelector(".slots");
+			let enemy = document.querySelector(".enemy");
+			let health_enemy = document.querySelector(".health_enemy");
+				let hp_enemy = document.querySelector(".hp_enemy");
+			let health_player = document.querySelector(".health_player");
+				let hp_player = document.querySelector(".hp_player");
+				let hand = document.querySelector(".hand");
+				let weap = document.querySelector(".weap");
+			let key = 0;
+			let keys = document.querySelector(".key");
+		let q5 = document.querySelector(".q5");
+			let loc5 = document.querySelector(".loc5");
+			let item = document.querySelectorAll(".item");
+			let seif = document.querySelector(".seif");
+			let front = document.querySelector(".front");
+			let enter = document.querySelector(".enter");
+			let control = document.querySelector(".control");
+			let ins = document.querySelector(".in");
+			let timer5 = document.querySelector(".timer5");
+				let time5 = document.querySelector(".times");
+			let x = 2;
+		let q6 = document.querySelector(".q6");
+		let loc6 = document.querySelector(".loc6");
+		start.onclick = function () {
+			menu.style.display = "none";
+			school.style.display = "block";
+			body.style.backgroundImage = "url(school.jpg)";
+		}
+		q1.onclick = function () {
+			loc1.style.display = "block";
+			skip.style.display = "block";
+			school.style.display = "none";
+			pers.style.backgroundImage = "none";
+			body.style.backgroundImage = "url(classroom.jpg)";
+			dialogue.style.display = "block";
+			l = 1;
+			pers.style.display = "block";
+		}
+		q2.onclick = function () {
+			pers.style.display = "block";
+			pers.style.backgroundImage = "none";
+			skip.style.display = "block";
+			school.style.display = "none";
+			loc2.style.display = "block";
+			body.style.backgroundImage = "url(sport.jpg)";
+			dialogue.style.display = "block";
+			l = 2;
+			t = 5;
+			time.innerHTML = t;
+		}
+		q3.onclick = function () {
+			pers.style.display = "block";
+			pers.style.backgroundImage = "none";
+			skip.style.display = "block";
+			school.style.display = "none";
+			loc3.style.display = "block";
+			body.style.backgroundImage = "url(teacher.jpg)";
+			dialogue.style.display = "block";
+			l = 3;
+		}
+		q4.onclick = function () {
+			pers.style.display = "block";
+			pers.style.backgroundImage = "none";
+			skip.style.display = "block";
+			health_enemy.style.display = "none";
+			school.style.display = "none";
+			body.style.backgroundImage = "url(corridor.jpg)";
+			dialogue.style.display = "block";
+			loc4.style.display =  "block";
+			enem.hp = 100;
+			player.hp = 100;
+			hp_enemy.innerHTML = enem.hp;
+			hp_player.innerHTML = player.hp;
+			health_enemy.style.width = enem.hp + "px";
+			health_player.style.width = player.hp + "px";
+			health_player.style.background = "green";
+			health_enemy.style.background = "green";
+			s = 0;
+			player.pen = randomItem();
+			l = 4;
+		}
+		q5.onclick = function () {
+			if (key == 1) {
+				keys.style.display = "none";
+				pers.style.display = "block";
+				pers.style.backgroundImage = "none";
+				skip.style.display = "block";
+				school.style.display = "none";
+				body.style.backgroundImage = "url(director.jpg)";
+				dialogue.style.display = "block";
+				loc5.style.display = "block";
+				l = 5;
+				t = 60;
+				time5.innerHTML = t;
+			}
+			if (key == 0) {
+				alert("У вас нет ключа")
+			}
+		}
+		q6.onclick = function () {
+			if (score == 5) {
+				pers.style.display = "block";
+				pers.style.backgroundImage = "none";
+				skip.style.display = "block";
+				school.style.display = "none";
+				body.style.backgroundImage = "url(5final.jpeg)";
+				dialogue.style.display = "block";
+				loc6.style.display = "block";
+				l = 6;
+			}
+			if (score < 5) {
+				alert("Вы в идеале должны пройти все локации, чтобы попасть сюда")
+			}
+		}
+		let player = {
+				hp: 100,
+				dmg: 5,
+				pen: randomItem(),
+				penDmg: 15,
+			}
+		let enem = {
+				hp: 100,
+				dmg: 10,
+		}
+		hp_enemy.innerHTML = enem.hp;
+		hp_player.innerHTML = player.hp;
+		attack = function () {
+			player.hp = player.hp - enem.dmg;
+			hp_player.innerHTML = player.hp;
+			health_player.style.width = player.hp + "px";
+			if (player.hp <= 66 && player.hp > 33) {
+				health_player.style.background = "orange";	
+			}
+			if (player.hp < 33) {
+				health_player.style.background = "red";	
+			}
+			if (enem.hp > 0 && player.hp <= 0 && s == 0) {
+				health_player.style.background = "green";
+				health_enemy.style.display = "none";
+				dialogue.style.display = "block";
+				txt.innerHTML = "Вы проиграли битву!";
+				slots.style.display = "none";
+				pers.style.display = "block";
+				enem.hp = 100;
+				player.hp = 100;
+				hp_enemy.innerHTML = enem.hp;
+				hp_player.innerHTML = player.hp;
+				health_enemy.style.width = enem.hp + "px";
+				health_player.style.width = player.hp + "px";
+				player.pen = randomItem();
+				health_enemy.style.display = "none";
+				setTimeout(loc4_lose, 1000);
+			}
+		}
+		hand.onclick = function () {
+			enem.hp = enem.hp - player.dmg;
+			hp_enemy.innerHTML = enem.hp;
+			health_enemy.style.width = enem.hp + "px";
+			if (enem.hp <= 66 && enem.hp > 33) {
+				health_enemy.style.background = "orange";	
+			}
+			if (enem.hp < 33) {
+				health_enemy.style.background = "red";	
+			}
+			setTimeout(attack, 1000);
+			if (enem.hp <= 0) {
+				s = 1;
+				health_enemy.style.background = "green";
+				health_enemy.style.display = "none";
+				dialogue.style.display = "block";
+				txt.innerHTML = "Вы выиграли битву";
+				slots.style.display = "none";
+				enem.hp = 100;
+				player.hp = 100;
+				health_enemy.style.width = enem.hp + "px";
+				health_player.style.width = player.hp + "px";
+				player.pen = randomItem();
+				knopka.style.display = "block";
+				skip.style.display = "block";
+			}		
+		}
+		weap.onclick = function () {
+			if (player.pen > 0) {
+				player.pen = player.pen - 1;
+				enem.hp = enem.hp - player.penDmg;
+				health_enemy.style.width = enem.hp + "px";
+				hp_enemy.innerHTML = enem.hp;
+				if (enem.hp <= 66 && enem.hp > 33) {
+				health_enemy.style.background = "orange";	
+				}
+				if (enem.hp < 33) {
+					health_enemy.style.background = "red";	
+				}
+				setTimeout(attack, 1000);
+			}
+			if (player.pen <= 0) {
+				weap.style.display = "none";
+			}
+			if (enem.hp <= 0) {
+				s = 1;
+				health_enemy.style.background = "green";
+				health_enemy.style.display = "none";
+				dialogue.style.display = "block";
+				txt.innerHTML = "Вы выиграли битву";
+				slots.style.display = "none";
+				enem.hp = 100;
+				player.hp = 100;
+				health_enemy.style.width = enem.hp + "px";
+				health_player.style.width = enem.hp + "px";
+				player.pen = randomItem();
+				knopka.style.display = "block";
+				
+				skip.style.display = "block";
+			}
+		}
+ 		loc1_lose = function () {
+ 			txt.innerHTML = "";
+			alert("Ты проиграл! Второго шанса не будет!");
+			point = point + 1;
+			loc1.style.display = "none";			
+			q1.style.display = "none";
+			school.style.display = "block";
+			knopka.style.display = "block";
+			body.style.backgroundImage = "url(school.jpg)";
+			dialogue.style.display = "none";
+			pers.style.display = "none";
+			n=0;
+			if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+			}
+		}
+		loc2_lose = function () {
+			txt.innerHTML = "";
+			alert("Ты проиграл! Второго шанса не будет!");
+			point = point + 1;
+			pers.style.display = "none";
+			loc2.style.display = "none";			
+			q2.style.display = "none";
+			school.style.display = "block";
+			body.style.backgroundImage = "url(school.jpg)";
+			dialogue.style.display = "none";
+			knopka.style.display = "block";
+			n=0;
+			if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+			}
+		}
+		loc3_lose = function () {
+			txt.innerHTML = "";
+			pers.style.display = "none";
+			pers.style.backgroundImage = "none";
+			alert("Ты проиграл! Второго шанса не будет!");
+			point = point + 1;
+			loc3.style.display = "none";			
+			q3.style.display = "none";
+			school.style.display = "block";
+			body.style.backgroundImage = "url(school.jpg)";
+			dialogue.style.display = "none";
+			knopka.style.display = "block";
+			n=0;
+			if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+			}
+		}
+		loc4_lose = function () {
+			txt.innerHTML = "";
+			alert("Ты проиграл! Но ты можешь пройти этот квест повторно!");
+
+			loc4.style.display = "none";			
+			school.style.display = "block";
+			body.style.backgroundImage = "url(school.jpg)";
+			dialogue.style.display = "none";
+			knopka.style.display = "block";
+			weap.style.display = "block";
+			pers.style.display = "none";
+			n=0;
+			player.pen = randomItem();
+			if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+			}
+		}
+		loc5_lose = function () {
+			pers.style.display = "none";
+			txt.innerHTML = "";
+			point = point + 1;
+			alert("Ты проиграл! Второго шанса не будет!");
+			loc5.style.display = "none";			
+			school.style.display = "block";
+			body.style.backgroundImage = "url(school.jpg)";
+			dialogue.style.display = "none";
+			knopka.style.display = "block";
+			weap.style.display = "block";
+			n=0;
+			q5.style.display = "none";
+			for (let i=0; i<item.length; i=i+1) {
+				item[i].innerHTML = "";
+			}
+			control.innerHTML = "Код не введён";
+			control.style.color = "white";
+			if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+			}
+		}
+		loc4_start = function () {
+			txt.innerHTML = "";
+			slots.style.display = "block";
+			dialogue.style.display = "none";
+			health_enemy.style.display = "block";
+		}
+		let loc1_random = function () {
+			let n=Math.random() * 1;
+			n = Math.round(n);
+			return n;
+		}
+
+		for (let i=0; i<ans.length; i=i+1) {
+			ans[i].onclick = function () {
+				if (i == 4) {
+					ask.style.display = "none";
+					knopka.style.display = "block";
+					txt.innerHTML = "Один из учеников: Вот что должен говорить настоящий староста! Все согласны с этим?";
+					pers.style.backgroundImage = "url(pers1.png)";
+				}
+				if (i == 3) {
+					z = loc1_random();
+					if (z == 1) {
+						ask.style.display = "none";
+						knopka.style.display = "block";
+						txt.innerHTML = "Один из учеников: Вот что должен говорить настоящий староста! Все согласны с этим?";
+						pers.style.backgroundImage = "url(pers1.png)";
+					}
+					if (z == 0) {
+						txt.innerHTML = "Один из учеников: Ты провалил проверку!"
+						setTimeout(loc1_lose, 2000);
+						pers.style.backgroundImage = "url(pers1.png)";
+					}
+				}
+				if (i != 4 && i != 3) {
+					txt.innerHTML = "Один из учеников: Ты провалил проверку!"
+					setTimeout(loc1_lose, 2000);
+					pers.style.backgroundImage = "url(pers1.png)";
+				}
+
+			}
+		}
+		test2 = function () {
+			book.innerHTML = "История";
+			zad.innerHTML = "Кого звали великим?"
+			for (let i=0; i<answers.length; i=i+1) {
+				answers[i].className = "btn btn-dark col-12 mt-3 answers bg-game border-0";
+			}
+			answers[0].innerHTML = "Пётр I";
+			answers[1].innerHTML = "Фёдор";
+			answers[2].innerHTML = "Владимир Путин";
+			answers[3].innerHTML = "Сталин";
+			otv = 1;
+			
+		}
+		test3 = function () {
+			book.innerHTML = "Физика";
+			zad.innerHTML = "Какой из учёных значит 'сила'?"
+			for (let i=0; i<answers.length; i=i+1) {
+				answers[i].className = "btn btn-dark col-12 mt-3 answers bg-game border-0";
+			}
+			answers[0].innerHTML = "Халк";
+			answers[1].innerHTML = "Ньютон";
+			answers[2].innerHTML = "Доктор Шизоидов";
+			answers[3].innerHTML = "Франкенштейн";
+			otv = 2;
+		}
+		test4 = function () {
+			book.innerHTML = "Русский язык";
+			zad.innerHTML = "'Жыл был крот, но потом он умер' какая ошибка была в тексте?"
+			for (let i=0; i<answers.length; i=i+1) {
+				answers[i].className = "btn btn-dark col-12 mt-3 answers bg-game border-0";
+			}
+			answers[0].innerHTML = "Крот не умерал";
+			answers[1].innerHTML = "'была'' а не 'был'";
+			answers[2].innerHTML = "'нопотом вместе'";
+			answers[3].innerHTML = "'Жы' 'шы' через 'и'";
+			otv = 3;
+		}
+		test5 = function () {
+			book.innerHTML = "Экономика";
+			zad.innerHTML = "'Чтобы поднять огромные бабки, что нужно делать?"
+			for (let i=0; i<answers.length; i=i+1) {
+				answers[i].className = "btn btn-dark col-12 mt-3 answers bg-game border-0";
+			}
+			answers[0].innerHTML = "Идти на завод";
+			answers[1].innerHTML = "Продвигаться в крупных компаниях";
+			answers[2].innerHTML = "Н**бывать";
+			answers[3].innerHTML = "Попрошайничать"
+			otv = 4;
+		}
+		loc3_end = function () {
+			pers.style.backgroundImage = "url(pers2.png)";
+			txt.innerHTML = "Учитель: Ты закончил тест?";
+			skip.style.display = "block";
+			knopka.style.display = "block";
+			loc3_ans.style.display = "none";
+			book.innerHTML = "Математика";
+			zad.innerHTML = "Сколько будет 2x = 8?"
+			for (let i=0; i<answers.length; i=i+1) {
+				answers[i].className = "btn btn-dark col-12 mt-3 answers bg-game border-0";
+			}
+			answers[0].innerHTML = "Нисколько";
+			answers[1].innerHTML = "10";
+			answers[2].innerHTML = "6";
+			answers[3].innerHTML = "4"
+			otv = 0;
+		}
+		for (let i=0; i<answers.length; i=i+1) {
+			answers[i].onclick = function () {
+				if (otv == 0) {
+					if (i == 3) {
+						scores = scores + 1;
+						answers[i].className = "btn btn-success col-12 mt-3 answers";
+						otv = -1;
+						setTimeout(test2, 1000);
+						
+					}
+					if (i != 3) {
+						otv = -1;
+						answers[3].className = "btn btn-success col-12 mt-3 answers";
+						answers[i].className = "btn btn-danger col-12 mt-3 answers";
+						setTimeout(test2, 2000);
+						
+					}
+				}
+				if (otv == 1) {
+					if (i == 0) {
+						otv = -1;
+						scores = scores + 1;
+						answers[i].className = "btn btn-success col-12 mt-3 answers";
+						setTimeout(test3, 1000);
+					}
+					if (i != 0) {
+						otv = -1;
+						answers[0].className = "btn btn-success col-12 mt-3 answers";
+						answers[i].className = "btn btn-danger col-12 mt-3 answers";
+						setTimeout(test3, 2000);
+					}
+				}
+				if (otv == 2) {
+					if (i == 1) {
+						otv = -1;
+						scores = scores + 1;
+						answers[i].className = "btn btn-success col-12 mt-3 answers";
+						setTimeout(test4, 1000);
+					}
+					if (i != 1) {
+						otv = -1;
+						answers[1].className = "btn btn-success col-12 mt-3 answers";
+						answers[i].className = "btn btn-danger col-12 mt-3 answers";
+						setTimeout(test4, 2000);
+					}
+				}
+				if (otv == 3) {
+					if (i == 3) {
+						otv = -1;
+						scores = scores + 1;
+						answers[i].className = "btn btn-success col-12 mt-3 answers";
+						setTimeout(test5, 1000);
+					}
+					if (i != 3) {
+						otv = -1;
+						answers[3].className = "btn btn-success col-12 mt-3 answers";
+						answers[i].className = "btn btn-danger col-12 mt-3 answers";
+						setTimeout(test5, 2000);
+					}
+				}
+				if (otv == 4) {
+					if (i == 2) {
+						otv = -1;
+						scores = scores + 1;
+						answers[i].className = "btn btn-success col-12 mt-3 answers";
+						setTimeout(loc3_end, 1000);
+					}
+					if (i != 2) {
+						otv = -1;
+						answers[2].className = "btn btn-success col-12 mt-3 answers";
+						answers[i].className = "btn btn-danger col-12 mt-3 answers";
+						setTimeout(loc3_end, 2000);
+					}
+				}
+			}
+		}
+		getRandom = function () {
+			let n=Math.random() * 80;
+			n = Math.round(n);
+			return n;
+		}
+		let stop = 0;
+		times = function () {
+			t = t - 1;
+			time.innerHTML = t;
+			time5.innerHTML = t;
+			if (t == 0 && l == 5) {
+				pers.style.display = "block";
+				pers.style.backgroundImage = "url(glav.png)";
+				dialogue.style.display = "block";
+				txt.innerHTML = "Я: Чёрт! Не успел";
+				t = -1;
+				clearInterval(stop);
+				setTimeout(loc5_lose, 1000);
+			}
+			if (t == 0 && n < 10 && l == 2) {
+				dialogue.style.display = "block";
+				for (let i=0; i<balls.length; i=i+1) {
+					balls[i].style.display = "none";
+				}
+				pers.style.display = "block";
+				pers.style.backgroundImage = "url(fizruk.png)";
+				txt.innerHTML = "Физрук: Итак победителем является ученик по имени N";
+				setTimeout(loc2_lose, 2000);
+				t = 0;
+				clearInterval(stop);
+			}
+		}
+
+		ball = function () {
+			pers.style.display = "none";
+			pers.style.backgroundImage = "none";
+			for (let i=0; i<10; i=i+1) {
+				let div =  document.createElement('div');
+				dialogue.style.display = "none";
+				loc2.append(div);
+				div.style.position = "absolute";
+				div.style.backgroundImage = "url(ball.png)";
+				div.style.backgroundSize = "100% 100%";
+				div.style.width = 100 + "px";
+				div.style.height = 100 + "px";
+				div.style.left = getRandom() + "%";
+				div.style.top = getRandom() + "%";
+				balls.push(div);
+				div.onclick = function () {
+					div.style.display = "none";
+					sc = sc + 1;
+					in_sc.innerHTML = sc;
+					if (sc == 10) {
+						pers.style.display = "block";
+						dialogue.style.display = "block";
+						knopka.style.display = "block";
+						sc = 0;
+						pers.style.backgroundImage = "url(fizruk.png)";
+						txt.innerHTML = "Физрук: Ты выиграл в состязании, собрав все мячи быстрее остальных";
+						clearInterval(stop);
+						for (let i=0; i<balls.length; i=i+1) {
+							balls[i].style.display = "none";
+						}
+					}
+				}
+			}
+			stop = setInterval(times, 1000);
+		}
+		loc5_start = function () {
+			pers.style.display = "none";
+			dialogue.style.display = "none";
+			stop = setInterval(times, 1000);
+			x=0;
+		}
+		for (let i=0; i<item.length; i=i+1) {
+			item[i].onclick = function () {
+				if (i == 0) {
+					item[i].style.background = "none";
+					item[i].innerHTML = "Первая часть кода: 1";
+				}
+				if (i == 1) {
+					item[i].style.background = "none";
+					item[i].innerHTML = "Вторая часть кода: 7";
+				}
+				if (i == 2) {
+					item[i].style.background = "none";
+					item[i].innerHTML = "Третья часть кода: 4";
+				}
+				if (i == 3) {
+					item[i].style.background = "none";
+					item[i].innerHTML = "Четвёртая часть кода: 0";
+				}
+			}
+		}
+		seif.onclick = function () {
+			if (x == 0) {
+				front.style.display = "none";
+				x=1;
+			}
+			else {
+				if (x == 1) {
+					front.style.display = "block";
+					x=0;
+				}
+			}
+
+		}
+		loc5_open = function () {
+			pers.style.display = "block";
+			pers.style.backgroundImage = "none";
+			dialogue.style.display = "block";
+			knopka.style.display = "block";
+			front.style.display = "none";
+			skip.style.display = "block";
+			txt.innerHTML = "Замок открылся!";
+			x=2;
+		}
+		ins.onclick = function () {
+			if (enter.value == 1740) {
+				control.innerHTML = "Код верный";
+				control.style.color = "lightgreen";
+				clearInterval(stop);
+				setTimeout(loc5_open, 1000);
+			}
+			if (enter.value != 1740) {
+				control.innerHTML = "Код неверный";
+				control.style.color = "red";
+			}
+		}
+		finish = function () {
+			location.reload();
+		}
+		skip.onclick = function () {
+			if (l == 1) {
+				pers.style.backgroundImage = "url(glav.png)";
+				txt.innerHTML = "Один из учеников: Тогда какова твоя цель, когда ты станешь старостой?";
+				ask.style.display = "block";
+				knopka.style.display = "none";
+				skip.style.display = "none";
+				n=17;
+			}
+			if (l == 2) {
+				pers.style.backgroundImage = "url(fizruk.png)";
+				txt.innerHTML = "Физрук: Ну тогда начнём!";
+				knopka.style.display = "none";
+				skip.style.display = "none";
+				setTimeout(ball, 1000);
+				n=7;
+			}
+			if (l == 3 && n < 18 && n >= 11) {
+				pers.style.backgroundImage = "none";
+				txt.innerHTML = "Вы получили +1 очко к продвижению";
+				skip.style.display = "none";
+				n=18;
+			}
+			if (l == 3 && n < 11) {
+				pers.style.backgroundImage = "url(glav.png)";
+				txt.innerHTML = "Тест начался";
+				knopka.style.display = "none";
+				skip.style.display = "none";
+				loc3_ans.style.display = "block";
+				n=11;
+			}
+			if (l == 4 && n < 21 && n >= 10) {
+				txt.innerHTML = "Вы получили +1 очко к продвижению";
+				pers.style.backgroundImage = "none";
+				skip.style.display = "none";
+				n=21;
+			}
+			if (l == 4 && n < 10) {
+				
+				pers.style.display = "none";
+				txt.innerHTML = "Битва началась!";
+				skip.style.display = "none";
+				knopka.style.display = "none";
+				setTimeout(loc4_start, 1000);
+				n=10;
+			}
+			if (l == 5 && n >= 7 && n < 18) {
+				pers.style.backgroundImage = "none";
+				txt.innerHTML = "Вы получили +1 очко к продвижению";
+				skip.style.display = "none";
+				n=18;
+			}
+			if (l == 5 && n < 7) {
+				pers.style.backgroundImage = "url(glav.png)";
+				knopka.style.display = "none";
+				skip.style.display = "none";
+				txt.innerHTML = "Поиски начались";
+				setTimeout(loc5_start, 1000);
+				n=7;
+			}
+			if (l == 6 && n >= 26 && n < 57) {
+				pers.style.backgroundImage = "url(directrissa.png)";
+				txt.innerHTML = "Зам.директора: На этом линейка окончена!";
+				skip.style.display = "none";
+				n=57;
+			}
+			if (l == 6 && n < 26) {
+				pers.style.backgroundImage = "url(glav.png)";
+				txt.innerHTML = "Я: Теперь приступим!";
+				n=26;
+			}
+			if (l == 7 && n < 13) {
+				pers.style.backgroundImage = "none";
+				txt.innerHTML = "Конец игры";
+				skip.style.display = "none";
+				n=13;
+			}
+		}
+		knopka.onclick = function () {
+			if (l==1) {
+				n = n + 1;
+				if (n == 1) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Я вбежал в класс и плюхнулся на последнюю парту";
+				}
+				if (n == 2) {
+					txt.innerHTML = "Вдруг заходит учитель и говорит"
+				}
+				if (n == 3) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Здравствуйте, дети!";
+				}
+				if (n == 4) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Ученики: Здравствуйте!"
+				}
+				if (n == 5) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Сегодня мы начинаем наш новый учебный год!"
+				}
+				if (n == 6) {
+					txt.innerHTML = "Учитель: Но перед этим выберем старосту класса"
+				}
+				if (n == 7) {
+					txt.innerHTML = "Учитель: Есть желающие на эту должность?"
+				}
+				if (n == 8) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Я хочу!"
+				}
+				if (n == 9) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Смелый шаг! Кто-нибудь ещё хочет стать старостой?"
+				}
+				if (n == 10) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Ученики: ..."
+				}
+				if (n == 11) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Ну тогда..."
+				}
+				if (n == 12) {
+					pers.style.backgroundImage = "url(pers1.png)";
+					txt.innerHTML = "Один из учеников: Стойте! Хочу задать вопрос будущему старосте."
+				}
+				if (n == 13) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Конечно! Задавай!"
+				}
+				if (n == 14) {
+					pers.style.backgroundImage = "url(pers1.png)";
+					txt.innerHTML = "Один из учеников: Хорошо"
+				}
+				if (n == 15) {
+					txt.innerHTML = "Один из учеников поворачивается ко мне"
+				}
+				if (n == 16) {
+					txt.innerHTML = "Один из учеников: Какова твоя цель, когда ты станешь старостой?"
+				}
+				if (n == 17) {
+					pers.style.backgroundImage = "url(glav.png)";
+					skip.style.display = "none";
+					ask.style.display = "block";
+					knopka.style.display = "none";
+				}
+				if (n == 18) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Ученики: Да!"
+				}
+				if (n == 19) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Ну раз смогли выбрать старосту. Теперь за урок!"
+				}
+				if (n == 20) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Вы получили +1 очко к продвижению";
+				}
+				if (n == 21) {
+					txt.innerHTML = "";
+					q1.style.display = "none";
+					score = score + 1;
+					point = point + 1;
+					school.style.display = "block";
+					body.style.backgroundImage = "url(school.jpg)";
+					dialogue.style.display = "none";
+					n=0;
+					pers.style.display = "none";
+					loc1.style.display = "none";
+					if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+					}
+				}
+			}
+			if (l == 2 ) {
+				n=n+1;
+				if (n == 1) {
+					txt.innerHTML = "Вхожу в спортзал и сажусь на скамейку с другими учениками";
+				}
+				if (n == 2) {
+					txt.innerHTML = "В зал входит физрук, подходит к нам и говорит";
+				}
+				if (n == 3) {
+					pers.style.backgroundImage = "url(fizruk.png)";
+					txt.innerHTML = "Физрук: Итак, сегодня вы будете учавствовать в соревновании, где вы должны будете показать свои навыки ловкости, выносливости и силы";
+				}
+				if (n == 4) {
+					txt.innerHTML = "Физрук: Вашей задачей будет собрать сегодня 10 баскетбольных мячей. Задача вроде проста, но тот кто соберёт их быстрее, будет победителем!";
+				}
+				if (n == 5) {
+					txt.innerHTML = "Физрук: Всем ясно?";
+				}
+				if (n == 6) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Ученики: Да!";
+				}
+				if (n == 7) {
+					pers.style.backgroundImage = "url(fizruk.png)";
+					skip.style.display = "none";
+					txt.innerHTML = "Физрук: Ну тогда начнём!";
+					knopka.style.display = "none";
+					setTimeout(ball, 1000);
+				}
+				if (n == 8) {
+					pers.style.backgroundImage = "url(fizruk.png)";
+					txt.innerHTML = "Физрук: Ты будешь гордостью всех учителей физкультуры!!!"
+				}
+				if (n == 9) {
+					txt.innerHTML = "Физрук: Теперь держи свой приз!";
+				}
+				if (n == 10) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Вы получили +1 очко к продвижению";
+				}
+				if (n == 11) {
+					txt.innerHTML = "";
+					q2.style.display = "none";
+					score = score + 1;
+					point = point + 1;
+					school.style.display = "block";
+					body.style.backgroundImage = "url(school.jpg)";
+					dialogue.style.display = "none";
+					n=0;
+					loc2.style.display = "none";
+					in_sc.innerHTML = sc;
+					pers.style.display = "none";
+					if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+					}
+				}
+			}
+			if (l == 3) {
+				n = n + 1;
+				if (n == 1) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Добрый день!";
+				}
+				if (n == 2) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Добрый!";
+				}
+				if (n == 3) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Итак, сегодня ты пишешь тест индивидуально!";
+				}
+				if (n == 4) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Почему я один пишу его?";
+				}
+				if (n == 5) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Потому что ты единственный переведённый ученик и к тебе у нас особое внимание";
+				}
+				if (n == 6) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Ну ладно, тогда что за тест?";
+				}
+				if (n == 7) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Тест состоит из 5 вопросов по разным предметам. Если наберёшь, хотя бы 3 балла, то сможешь его сдать";
+				}
+				if (n == 8) {
+					txt.innerHTML = "Учитель: Всё понял?";
+				}
+				if (n == 9) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Разумеется";
+				}
+				if (n == 10) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Тогда приступим";
+				}
+				if (n == 11) {
+					pers.style.backgroundImage = "url(glav.png)";
+					skip.style.display = "none";
+					txt.innerHTML = "Тест начался";
+					knopka.style.display = "none";
+					loc3_ans.style.display = "block";
+				}
+				if (n == 12) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Да!";
+				}
+				if (n == 13) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Жди результатов!";
+				}
+				if (n == 14) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Учитель проверяет работу и спустя 5 минут результаты готовы";
+				}
+				if (n == 15) {
+					pers.style.backgroundImage = "url(pers2.png)";
+					txt.innerHTML = "Учитель: Итак, ты набрал " + scores + " баллов из 5";
+				}
+				if (n == 16) {
+					if (scores > 2) {
+						txt.innerHTML = "Учитель: Поздравляю! Ты благополучно сдал тест";	
+					}
+					if (scores <= 2) {
+						txt.innerHTML = "Учитель: К сожалению ты провалил тест!";
+					}
+				}
+				if (n == 17) {
+					pers.style.backgroundImage = "url(glav.png)";
+					if (scores > 2) {
+						txt.innerHTML = "Я: Благодарю!";	
+					}
+					if (scores <= 2) {
+						setTimeout(loc3_lose, 1000);
+					}
+				}
+				if (n == 18) {
+					pers.style.backgroundImage = "none";
+					skip.style.display = "none";
+					txt.innerHTML = "Вы получили +1 очко к продвижению";
+				}
+				if (n == 19) {
+					pers.style.display = "none";
+					txt.innerHTML = "";
+					q3.style.display = "none";
+					score = score + 1;
+					point = point + 1;
+					school.style.display = "block";
+					body.style.backgroundImage = "url(school.jpg)";
+					dialogue.style.display = "none";
+					loc3.style.display = "none";
+					n=0;
+					if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+					}
+				}
+			}
+			if (l == 4) {
+				n = n+1;
+				if (n == 1) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Идя по коридору, я встретил местного хулигана по кличке 'Волк'";
+				}
+				if (n == 2) {
+					pers.style.backgroundImage = "url(pers4.png)";
+					txt.innerHTML = "Волк: Cлышь!";
+				}
+				if (n == 3) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Чего тебе?";
+				}
+				if (n == 4) {
+					pers.style.backgroundImage = "url(pers4.png)";
+					txt.innerHTML = "Волк: А ты чё такой борзый ходишь, а?";
+				}
+				if (n == 5) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: В смысле? Чего ты пристал ко мне";
+				}
+				if (n == 6) {
+					pers.style.backgroundImage = "url(pers4.png)";
+					txt.innerHTML = "Волк: Ты давай-ка базар свой фильтруй, чухло";
+				}
+				if (n == 7) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Чухло ты в зеркале увидишь";
+				}
+				if (n == 8) {
+					pers.style.backgroundImage = "url(pers4.png)";
+					txt.innerHTML = "Волк: Ну всё тебе конец!";
+				}
+				if (n == 9) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Ну давай проучим негодника!";
+				}
+				if (n == 10) {
+					pers.style.display = "none";
+					skip.style.display = "none";
+					txt.innerHTML = "Битва началась!";
+					knopka.style.display = "none";
+					setTimeout(loc4_start, 1000);
+				}
+				if (n == 11) {
+					pers.style.backgroundImage = "none";
+					pers.style.display = "block";
+					txt.innerHTML = "Задиру останавливают его дружки";
+				}
+				if (n == 12) {
+					pers.style.backgroundImage = "url(pers4.png)";
+					txt.innerHTML = "Волк: Я убью тебя!!!";
+				}
+				if (n == 13) {
+					pers.style.backgroundImage = "url(pers3.png)";
+					txt.innerHTML = "Один из дружков: Да ладно тебе, ты уже проиграл!";
+				}
+				if (n == 14) {
+					pers.style.backgroundImage = "url(pers4.png)";
+					txt.innerHTML = "Волк: Я не уйду пока не изобью его!";
+				}
+				if (n == 15) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "С этими словами Волка утащили в учительскую"
+					enemy.style.display = "none";
+				}
+				if (n == 16) {
+					txt.innerHTML = "На его месте я кое-что обнаружил";
+				}
+				if (n == 17) {
+					txt.innerHTML = "Из его кармана выпал ключ, видимо от директорской и записка";
+				}
+				if (n == 18) {
+					txt.innerHTML = "Я раскрываю эту записку и начинаю читать";
+				}
+				if (n == 19) {
+					pers.style.backgroundImage = "url(director.png)";
+					txt.innerHTML = "В записке: 'Директор: если кто-нибудь узнает о том что я делаю в школе,тогда я сделаю всё чтобы сломать тебе жизнь!' Конец";
+				}
+				if (n == 20) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Ого жёстко, надо бы заглянуть в директорскую";
+				}
+				if (n == 21) {
+					pers.style.backgroundImage = "none";
+					skip.style.display = "none";
+					txt.innerHTML = "Вы получили +1 очко к продвижению";
+				}
+				if (n == 22) {
+					keys.style.display = "block";
+					pers.style.display = "none";
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "";
+					loc4.style.display = "none";
+					q4.style.display = "none";
+					score = score + 1;
+					point = point + 1;
+					school.style.display = "block";
+					body.style.backgroundImage = "url(school.jpg)";
+					dialogue.style.display = "none";
+					n=0;
+					key = 1;
+					if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+					}
+				}
+			}
+			if (l == 5) {
+				n = n+1;
+				if (n == 1) {
+					txt.innerHTML = "Вставив ключ и открыв замок, я вошёл в кабинет директора";
+				}
+				if (n == 2) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Вау! Какой современный кабинет, не то что другие, словно в другом измерении";
+				}
+				if (n == 3) {
+					txt.innerHTML = "Я: Тааак-с, теперь мне нужно найти секреты директора";
+				}
+				if (n == 4) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Охватывая весь кабинет взглядом я обнаружил на столе сейф в котором есть кодовый замок из 4-х символов";
+				}
+				if (n == 5) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Интересно, как я смогу открыть его? Возможно в кабинете я смогу найти подсказки!";
+				}
+				if (n == 6) {
+					txt.innerHTML = "Я: Теперь приступим. На всё про всё минуту";
+				}
+				if (n == 7) {
+					skip.style.display = "none";
+					knopka.style.display = "none";
+					txt.innerHTML = "Поиски начались";
+					setTimeout(loc5_start, 1000);
+				}
+				if (n == 8) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Интересно что же там?";
+				}
+				if (n == 9) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Заглянув внутрь я увидел множество стопок бумаги и некоторые ценные вещи";
+				}
+				if (n == 10) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Блин, а смогу ли я найти эти доказательства о его секретных делах?";
+				}
+				if (n == 11) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Спустя 2 минуты поисков я смог углядеть одну интересную папку";
+				}
+				if (n == 12) {
+					txt.innerHTML = "На вид она была более старой в отличии от остальных";
+				}
+				if (n == 13) {
+					txt.innerHTML = "Вся потрёпанная и скомканная";
+				}
+				if (n == 14) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Надеюсь я попал прямо в десятку!";
+				}
+				if (n == 15) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Открыв папку и достав некоторые бумаги я пришёл в ужас от того что директор творит";
+				}
+				if (n == 16) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Старый извращюга! Ну ты попал конечно.";
+				}
+				if (n == 17) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Положив в сумку всё необходимое,я быстро умчался в сторону выхода и благополучно выполнил своё задание";
+				}
+				if (n == 18) {
+					skip.style.display = "none";
+					txt.innerHTML = "Вы получили +1 очко к продвижению";
+				}
+				if (n == 19) {
+
+					pers.style.display = "none";
+					txt.innerHTML = "";
+					q5.style.display = "none";
+					loc5.style.display = "none";
+					score = score + 1;
+					point = point + 1;
+					school.style.display = "block";
+					body.style.backgroundImage = "url(school.jpg)";
+					dialogue.style.display = "none";
+					n=0;
+					x=0;
+					for (let i=0; i<item.length; i=i+1) {
+						item[i].innerHTML = "";
+					}
+					control.innerHTML = "Код не введён";
+					control.style.color = "white";
+					if (point == 5 && score < 5) {
+						body.style.backgroundImage = "url(lose.jpeg)";
+						school.style.display = "none";
+						dialogue.style.display = "block";
+						skip.style.display = "block";
+						txt.innerHTML = "Эпилог";
+						l = 7;
+					}
+				}
+			}
+			if (l == 6) {
+				n = n+1;
+				if (n==1) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Сегодня все собрались на линейку";
+				}
+				if (n==2) {
+					txt.innerHTML = "Выйдя во двор, я тут же помчался к своему классу";
+				}
+				if (n==3) {
+					txt.innerHTML = "В строю рядом со мной болтают ученики о том, что будет на линейке. Хы хы, поговорю-ка я с ними";
+				}
+				if (n==4) {
+					pers.style.backgroundImage = "url(friend1.png)";
+					txt.innerHTML = "Один из учеников: Интересно что же сегодня будут рассказывать?";
+				}
+				if (n==5) {
+					pers.style.backgroundImage = "url(friend2.png)";
+					txt.innerHTML = "Другой отвечает: Не знаю, наверное опять будут про будущие мероприятия говорить!";
+				}
+				if (n==6) {
+					pers.style.backgroundImage = "url(friend1.png)";
+					txt.innerHTML = "Один из учеников: Уж наверняка ещё и грамоты вручат самым активным";
+				}
+				if (n==7) {
+					pers.style.backgroundImage = "url(friend2.png)";
+					txt.innerHTML = "Другой отвечает: Это точно!";
+				}
+				if (n==8) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Ну да, сегодня будет весело!";
+				}
+				if (n==9) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Один из них повернулся ко мне и сказал";
+				}
+				if (n==10) {
+					pers.style.backgroundImage = "url(friend1.png)";
+					txt.innerHTML = "Один из учеников: О чём ты?";
+				}
+				if (n==11) {
+					pers.style.backgroundImage = "url(friend2.png)";
+					txt.innerHTML = "Его друг: И вправду что ты имеешь ввиду?";
+				}
+				if (n==12) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Скоро сами всё увидите";
+				}
+				if (n==13) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Они оба смотрели на меня вопросительно, но я не обратил на это внимание и устремил свой взор на идущего к нам зам. директора";
+				}
+				if (n==14) {
+					pers.style.backgroundImage = "url(directrissa.png)";
+					txt.innerHTML = "Зам. директора: Добрый день, ученики!";
+				}
+				if (n==15) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Ученики: Здравствуйте!";
+				}
+				if (n==16) {
+					pers.style.backgroundImage = "url(directrissa.png)";
+					txt.innerHTML = "Зам. директора: Сегодня мы с учителями расскажем вам о будущих мероприятиях!"
+				}
+				if (n==17) {
+					txt.innerHTML = "Зам. директора: Надеюсь после рассказа, вас заинтересует что-нибудь!"
+				}
+				if (n==18) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "После всех этих скучных рассказов про разные конкурсы и прочее"
+				}
+				if (n==19) {
+
+					txt.innerHTML = "Зам.директора вызвала меня к себе по моей просьбе, чтобы передать что-то важное"
+				}
+				if (n==20) {
+					pers.style.backgroundImage = "url(directrissa.png)";
+					txt.innerHTML = "Зам.директора: Итак, приветствуйте ученика ... , он хочет донести до вас важную информацию"
+				}
+				if (n==21) {
+					txt.innerHTML = "Зам.директора: Мне даже самой будет интересно узнать о чём таком важном он хочет вам всем рассказать"
+				}
+				if (n==22) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Выйдя на крыльцо, я почувствовал атмосферу любопытства от всех учеников и учителей"
+				}
+				if (n==23) {
+					txt.innerHTML = "Да начнётся веселье!"
+				}
+				if (n==24) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Приветствую всех сегодня!"
+				}
+				if (n==25) {
+					txt.innerHTML = "Я: Перед тем как начать, хотелось бы поблагодарить зам.директора за выполненную мною просьбу"
+				}
+				if (n==26) {
+					txt.innerHTML = "Я: Теперь приступим!"
+				}
+				if (n==27) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Снимаю с себя рюкзак, затем достаю от туда папку"
+				}
+				if (n==28) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Вот то что я хочу вам сегодня показать"
+				}
+				if (n==29) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Протягиваю руку вверх и показываю всем старую потрёпанную папку"
+				}
+				if (n==30) {
+					txt.innerHTML = "Ученикам вдруг стало ещё любопытнее, что же произойдёт если я открою эту папку"
+				}
+				if (n==31) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Итак! Я обвиняю директора в 18+ делах, нарушающие закон!"
+				}
+				if (n==32) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Вдруг подул ветер и папка раскрылась, испуская из себя кучу бумаг в разные стороны"
+				}
+				if (n==33) {
+					txt.innerHTML = "Каждый из учеников увидев то, как директор развлекается с ученицами, не мог не высказать своё мнение"
+				}
+				if (n==34) {
+					pers.style.backgroundImage = "url(friend1.png)";
+					txt.innerHTML = "Один из подобравших: Афигеть! Фото, где директор помогает задирам окунать ученика в унитаз";
+				}
+				if (n==35) {
+					pers.style.backgroundImage = "url(friend2.png)";
+					txt.innerHTML = "Другой: Ого! Тут справка директора на питание в столовке, как малоимущего!";
+				}
+				if (n==36) {
+					pers.style.backgroundImage = "url(pers1.png)";
+					txt.innerHTML = "Третий: Здесь диск, с подписью 'Школьный бухич'";
+				}
+				if (n==37) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Все учителя были в шоке. Зам.директора вдруг обратилась ко мне";
+				}
+				if (n==38) {
+					pers.style.backgroundImage = "url(directrissa.png)";
+					txt.innerHTML = "Зам.директора: Я даже и не знала, что наш директор может быть таким человеком";
+				}
+				if (n==39) {
+					txt.innerHTML = "Зам.директора: Он ведь такой добрый и общительный, даже представить себе сложно";
+				}
+				if (n==40) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: В нашем мире много лицемерных гадов, которые под маской добра, творят беззаконие, чтобы не вызывать на себя никаких подозрений";
+				}
+				if (n==41) {
+					txt.innerHTML = "Я: Сегодня мы разоблачили одного,но в мире ещё полно таких как он и наша задача исправлять подобных ему людей";
+				}
+				if (n==42) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "После этого зам.директора молча ушла в школу, ни на кого не обращая внимание";
+				}
+				if (n==43) {
+					txt.innerHTML = "Теперь пора мне заявить о себе";
+				}
+				if (n==44) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Снова обращяюсь ко всем учащимся в школе";
+				}
+				if (n==45) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Вдруг наступила тишина и все ученики молча наблюдали за разоблачителем";
+				}
+				if (n==46) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Продолжаю: Так как место директора уже можно сказать свободно, я бы хотел предложить свою кандидатуру";
+				}
+				if (n==47) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Ученики удивились этой просьбе и один из них задал вопрос";
+				}
+				if (n==48) {
+					pers.style.backgroundImage = "url(pers1.png)";
+					txt.innerHTML = "Один из учеников: А как ты станешь директором? Если ты являешься ещё учеником";
+				}
+				if (n==49) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Другие: Да точно...Как ты им станешь?...Ты же школьник";
+				}
+				if (n==50) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Здесь всё просто, я встану во главе школьного совета и буду иметь власть директора";
+				}
+				if (n==51) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Все снова замолкли, но спустя пару минут все ученики дали своё согласие";
+				}
+				if (n==52) {
+					txt.innerHTML = "И тут неожиданно выскакивает зам.директора";
+				}
+				if (n==53) {
+					pers.style.backgroundImage = "url(directrissa.png)";
+					txt.innerHTML = "Зам.директора: Вы хотите занять пост директора? Но это невозможно";
+				}
+				if (n==54) {
+					txt.innerHTML = "Зам.директора: Вот по-поводу главы школьного совета, то это вполне выполнимо";
+				}
+				if (n==55) {
+					txt.innerHTML = "Зам.директора: Я дам тебе согласие и с этого дня ты будешь состоять в совете, как его глава, согласен? ";
+				}
+				if (n==56) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Да!";
+				}
+				if (n==57) {
+					pers.style.backgroundImage = "url(directrissa.png)";
+					skip.style.display = "none";
+					txt.innerHTML = "Зам.директора: На этом линейка окончена!";
+				}
+				if (n==58) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "И уже через 5 минут двор был пустым";
+				}
+				if (n==59) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "Я: Наконец-то я смог стать лучшим во всей школе";
+				}
+				if (n==60) {
+					txt.innerHTML = "Я: И благодаря случаю с директором, мы смогли восстановить справедливость";
+				}
+				if (n==61) {
+					txt.innerHTML = "Я: Впереди ещё весь мир! Я смогу ещё принести пользу многим людям";
+				}
+				if (n==62) {
+					txt.innerHTML = "Я: В путь!";
+				}
+				if (n==63) {
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "После этого случая, директора уволили из школы и он продолжил свой путь в Макдональдсе";
+				}
+				if (n==64) {
+					txt.innerHTML = "Я же сейчас проживаю свои спокойные школьные деньки";
+				}
+				if (n==65) {
+					txt.innerHTML = "Конец игры";
+				}
+				if (n==66) {
+					pers.style.display = "none";
+					txt.innerHTML = "";
+					q6.style.display = "none";
+					loc6.style.display = "none";
+					score = 0;
+					school.style.display = "block";
+					body.style.backgroundImage = "url(win.png)";
+					dialogue.style.display = "none";
+					school.style.display = "none";
+					setTimeout(finish, 3000);
+				}
+			}
+			if (l == 7) {
+				n = n+1;
+				if (n == 1) {
+					pers.style.display = "block";
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Пройдя всё то что я запланировал";
+				}
+				if (n == 2) {
+					txt.innerHTML = "Я потерпел неудачу";
+				}
+				if (n == 3) {
+					txt.innerHTML = "Такой долгий план я строил, что даже не смог покорить одну единственную школу";
+				}
+				if (n == 4) {
+					txt.innerHTML = "Это позор! Столько усилий и из-за нескольких ошибок я не смог стать лучшим учеником";
+				}
+				if (n == 5) {
+					txt.innerHTML = "Грустно осознавать собственную слабость, но в будущем я не потерплю провалов!";
+				}
+				if (n == 6) {
+					txt.innerHTML = "Спустя год, ученик по имени ... пропал без вести";
+				}
+				if (n == 7) {
+					txt.innerHTML = "Полиция нашла у него дома какую-то записку спрятанную в его шкафу";
+				}
+				if (n == 8) {
+					txt.innerHTML = "Там было написано";
+				}
+				if (n == 9) {
+					pers.style.backgroundImage = "url(glav.png)";
+					txt.innerHTML = "'Я: Тот кто прочитает письмо, скорее всего кто-то из правохранительных органов, моё послание вам гласит: Я отправился далеко от сюда, чтобы набраться опыта...'";
+				}
+				if (n == 10) {
+					txt.innerHTML = "'...Можете даже не пытаться найти меня, а родителям хочу пожелать удачи и попросить у них прощения...'";
+				}
+				if (n == 11) {
+					txt.innerHTML = "'...Через год или два я вернусь, возможно уже стундентом, но останавливаться я не собираюсь, так что прошу меня не беспокоить'";
+				}
+				if (n == 12) {
+					txt.innerHTML = "'Ваш ученик школы ... по имени ...'";
+				}
+				if (n == 13) {
+					skip.style.display = "none";
+					pers.style.backgroundImage = "none";
+					txt.innerHTML = "Конец игры";
+				}
+				if (n == 14) {
+					txt.innerHTML = "";
+					score = 0;
+					point = 0;
+					school.style.display = "block";
+					body.style.backgroundImage = "url(lose.jpg)";
+					dialogue.style.display = "none";
+					school.style.display = "none";
+					setTimeout(finish, 3000);
+				}
+			}
+		}
+	</script>
+</body>
+</html>
