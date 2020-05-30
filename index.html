@@ -474,8 +474,19 @@
 			let timer5 = document.querySelector(".timer5");
 				let time5 = document.querySelector(".times");
 			let x = 2;
+		let num = [0,0,0,0]
 		let q6 = document.querySelector(".q6");
 		let loc6 = document.querySelector(".loc6");
+		let randomCode = function () {
+			let n = Math.random()*8999 + 1000;
+			n = Math.round(n);
+			return n;
+		}
+		let code = randomCode();
+		num[0] = (code - (code%1000))/1000;
+		num[1] = ((code%1000) - (code%100))/100;
+		num[2] = ((code%100) - (code%10))/10;
+		num[3] = (code%10) - (code%1)/1;
 		start.onclick = function () {
 			menu.style.display = "none";
 			school.style.display = "block";
@@ -868,7 +879,7 @@
 			}
 			answers[0].innerHTML = "Идти на завод";
 			answers[1].innerHTML = "Продвигаться в крупных компаниях";
-			answers[2].innerHTML = "Наёживать";
+			answers[2].innerHTML = "Н**бывать";
 			answers[3].innerHTML = "Попрошайничать"
 			otv = 4;
 		}
@@ -1043,19 +1054,19 @@
 			item[i].onclick = function () {
 				if (i == 0) {
 					item[i].style.background = "none";
-					item[i].innerHTML = "Первая часть кода: 1";
+					item[i].innerHTML = "Первая часть кода: " + num[0];
 				}
 				if (i == 1) {
 					item[i].style.background = "none";
-					item[i].innerHTML = "Вторая часть кода: 7";
+					item[i].innerHTML = "Вторая часть кода: " + num[1];
 				}
 				if (i == 2) {
 					item[i].style.background = "none";
-					item[i].innerHTML = "Третья часть кода: 4";
+					item[i].innerHTML = "Третья часть кода: " + num[2];
 				}
 				if (i == 3) {
 					item[i].style.background = "none";
-					item[i].innerHTML = "Четвёртая часть кода: 0";
+					item[i].innerHTML = "Четвёртая часть кода: " + num[3];
 				}
 			}
 		}
@@ -1083,13 +1094,13 @@
 			x=2;
 		}
 		ins.onclick = function () {
-			if (enter.value == 1740) {
+			if (enter.value == code) {
 				control.innerHTML = "Код верный";
 				control.style.color = "lightgreen";
 				clearInterval(stop);
 				setTimeout(loc5_open, 1000);
 			}
-			if (enter.value != 1740) {
+			if (enter.value != code) {
 				control.innerHTML = "Код неверный";
 				control.style.color = "red";
 			}
